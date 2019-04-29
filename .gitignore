@@ -1,0 +1,8 @@
+.stack-work/
+.cabal-sandbox/
+dist-newstyle/
+**/.stack-work/
+**/.cabal-sandbox/
+**/dist-newstyle/
+**/dist
+*~

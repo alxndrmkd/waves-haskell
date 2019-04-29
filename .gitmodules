@@ -1,0 +1,4 @@
+[submodule "elliptics/cbits/ref10_extract"]
+	path = elliptics/cbits/ref10_extract
+	url = git@github.com:disfenoid/ref10_extract.git
+	branch = master

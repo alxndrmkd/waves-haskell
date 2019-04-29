@@ -1,0 +1,34 @@
+name:                waves-fork-monitor
+version:             0.1.0.0
+
+license:             WTFPL
+
+license-file:        LICENSE
+
+author:              Alexandr Makoed
+
+maintainer:          me@dsfn.gq
+
+build-type:          Simple
+
+extra-source-files:  ChangeLog.md
+
+cabal-version:       >=1.10
+
+
+executable waves-fork-monitor
+  main-is:             Main.hs
+  
+  build-depends:       base >=4.7 && < 5
+                     , network
+                     , waves-data
+                     , waves-network
+                     , monad-logger
+                     , transformers-base
+                     , lifted-base
+                     , lifted-stm
+  
+  hs-source-dirs:      src
+  
+  default-language:    Haskell2010
+  

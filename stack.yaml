@@ -1,0 +1,18 @@
+flags: {}
+
+packages:
+- elliptics/
+- waves-crypto/
+- waves-data/
+- waves-network/
+- waves-fork-monitor/
+
+extra-deps:
+- base58-bytestring-0.1.0
+- lifted-stm-0.1
+- monad-abort-fd-0.7
+- monad-finally-0.1.2
+- transformers-abort-0.6.0.1
+
+resolver: lts-12.10
+

@@ -1,0 +1,99 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: bc5be1ca32f6a7ea7666b56db99f086c03ba5f65cbc71f8bc2b28f0cf737163e
+
+name:           elliptics
+version:        0.1.0.0
+synopsis:       Bindings to trevp/ref10_extract
+description:    Please see the README on GitHub at <https://github.com/githubuser/elliptics#readme>
+category:       cryptography
+homepage:       https://github.com/disfenoid/elliptics#readme
+bug-reports:    https://github.com/disfenoid/elliptics/issues
+author:         Alexandr M.
+maintainer:     disfenoid@gmail.com
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/disfenoid/elliptics
+
+library
+  exposed-modules:
+      Crypto.Elliptics.Curve25519
+  other-modules:
+      Paths_elliptics
+  hs-source-dirs:
+      src
+  c-sources:
+      cbits/ref10_extract/ed25519/fe_mul.c
+      cbits/ref10_extract/ed25519/fe_isnegative.c
+      cbits/ref10_extract/ed25519/fe_1.c
+      cbits/ref10_extract/ed25519/fe_sq.c
+      cbits/ref10_extract/ed25519/ge_p3_tobytes.c
+      cbits/ref10_extract/ed25519/fe_pow22523.c
+      cbits/ref10_extract/ed25519/ge_sub.c
+      cbits/ref10_extract/ed25519/fe_tobytes.c
+      cbits/ref10_extract/ed25519/ge_p2_0.c
+      cbits/ref10_extract/ed25519/ge_tobytes.c
+      cbits/ref10_extract/ed25519/ge_double_scalarmult.c
+      cbits/ref10_extract/ed25519/fe_cmov.c
+      cbits/ref10_extract/ed25519/fe_sq2.c
+      cbits/ref10_extract/ed25519/ge_msub.c
+      cbits/ref10_extract/ed25519/ge_p3_to_cached.c
+      cbits/ref10_extract/ed25519/fe_sub.c
+      cbits/ref10_extract/ed25519/ge_precomp_0.c
+      cbits/ref10_extract/ed25519/ge_p1p1_to_p2.c
+      cbits/ref10_extract/ed25519/ge_frombytes.c
+      cbits/ref10_extract/ed25519/ge_p3_dbl.c
+      cbits/ref10_extract/ed25519/nacl_sha512/hash.c
+      cbits/ref10_extract/ed25519/nacl_sha512/blocks.c
+      cbits/ref10_extract/ed25519/ge_p1p1_to_p3.c
+      cbits/ref10_extract/ed25519/ge_add.c
+      cbits/ref10_extract/ed25519/fe_frombytes.c
+      cbits/ref10_extract/ed25519/fe_copy.c
+      cbits/ref10_extract/ed25519/fe_add.c
+      cbits/ref10_extract/ed25519/ge_madd.c
+      cbits/ref10_extract/ed25519/sc_muladd.c
+      cbits/ref10_extract/ed25519/ge_scalarmult_base.c
+      cbits/ref10_extract/ed25519/main/main.c
+      cbits/ref10_extract/ed25519/fe_isnonzero.c
+      cbits/ref10_extract/ed25519/additions/zeroize.c
+      cbits/ref10_extract/ed25519/additions/compare.c
+      cbits/ref10_extract/ed25519/additions/sign_modified.c
+      cbits/ref10_extract/ed25519/additions/curve_sigs.c
+      cbits/ref10_extract/ed25519/sc_reduce.c
+      cbits/ref10_extract/ed25519/fe_invert.c
+      cbits/ref10_extract/ed25519/fe_0.c
+      cbits/ref10_extract/ed25519/sign.c
+      cbits/ref10_extract/ed25519/ge_p3_0.c
+      cbits/ref10_extract/ed25519/fe_neg.c
+      cbits/ref10_extract/ed25519/open.c
+      cbits/ref10_extract/ed25519/ge_p3_to_p2.c
+      cbits/ref10_extract/ed25519/ge_p2_dbl.c
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+  default-language: Haskell2010
+
+test-suite elliptics-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_elliptics
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , bytestring
+    , elliptics
+  default-language: Haskell2010

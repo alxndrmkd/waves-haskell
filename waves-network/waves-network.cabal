@@ -1,0 +1,68 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fc8e1a207633ab5b15e6c761383e96c0f0dae71bc024715b63353aa1702a3bf8
+
+name:           waves-network
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/disfenoid/waves-network#readme>
+homepage:       https://github.com/disfenoid/waves-network#readme
+bug-reports:    https://github.com/disfenoid/waves-network/issues
+author:         Alexandr M.
+maintainer:     disfenoid@gmail.com
+copyright:      2018 Alexandr M.
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/disfenoid/waves-network
+
+library
+  exposed-modules:
+      Waves.Network
+  other-modules:
+      Waves.Network.Protocol.SerDe
+      Waves.Network.Protocol.Types
+      Waves.Network.Transport.Error
+      Waves.Network.Transport.Node
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , waves-crypto
+    , waves-data
+    , lens
+    , text
+    , network
+    , mtl
+    , bytestring
+    , cereal
+    , transformers-base
+    , lifted-base
+    , lifted-stm
+    , lifted-async
+    , monad-control
+    , containers
+    , monad-logger
+
+  default-language: Haskell2010
+
+test-suite waves-network-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_waves_network
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , waves-network
+  default-language: Haskell2010

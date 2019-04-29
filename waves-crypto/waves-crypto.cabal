@@ -1,0 +1,43 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 8e729ca2b314084a84ccd01f5fb9a5ca05d9b2f36f7cd687947780618c487b97
+
+name:           waves-crypto
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/disfenoid/waves-crypto#readme>
+homepage:       https://github.com/disfenoid/waves-crypto#readme
+bug-reports:    https://github.com/disfenoid/waves-crypto/issues
+license:        WTFPL
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/disfenoid/waves-crypto
+
+library
+  exposed-modules:
+      Waves.Crypto
+  other-modules:
+      Waves.Crypto.Base
+      Waves.Crypto.Funcs
+      Waves.Crypto.Types
+      Paths_waves_crypto
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , base58-bytestring
+    , base64-bytestring
+    , bytestring
+    , cryptonite
+    , elliptics
+    , memory
+    , text
+  default-language: Haskell2010
